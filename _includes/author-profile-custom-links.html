@@ -5,3 +5,29 @@
     </a>
   </li>
 -->
+
+<hr>
+<tag>
+  <a href="/categories/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+    Categories
+  </a>
+</tag>
+
+{% assign categories_max = 0 %}
+{% for category in site.categories %}
+  {% if category[1].size > categories_max %}
+    {% assign categories_max = category[1].size %}
+  {% endif %}
+{% endfor %}
+
+{% for i in (1..categories_max) reversed %}
+  {% for category in site.categories %}
+    {% if category[1].size == i %}
+      <ul style="padding-top: 0px; padding-bottom: 0px;">
+        <a href="/categories/#{{ category[0] | slugify }}">
+          <strong style="font-size: 15px;">{{ category[0] }}</strong> <span class="taxonomy__count" style="font-size: 13px;">{{ i }}</span>
+        </a>
+      </ul>
+    {% endif %}
+  {% endfor %}
+{% endfor %}

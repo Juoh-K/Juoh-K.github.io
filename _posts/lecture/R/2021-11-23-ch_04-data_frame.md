@@ -2,7 +2,7 @@
 layout: single
 title:  "쉽게 배우는 R 데이터분석 Ch.4"
 categories: R
-tag: [R]
+tag: [R, 데이터프레임, 외부데이터]
 toc: true  # 목차 자동 생성 기능
 toc_sticky: True # 목차 위치 고정 
 toc_label : "Contents" # 목차명
